@@ -1,0 +1,29 @@
+:root {
+    --main-color-red: #9C1010;
+    --background-main: #eceeed;
+    --while-color: #fff;
+    --blue-color: #337ab7;
+    --bgr-menuLeft: #f2f1eb;
+    --orange-color: #ff9900;
+}
+
+html {
+    font: 14px 'Segoe UI','Helvetica Neue','Droid Sans',Arial,Tahoma,Sans-serif;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+    color: #343434;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    margin: 20px 0;
+}

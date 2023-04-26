@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>CTTBK_MainPage</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="./font/fontawesome-free-6.4.0-web/css/all.min.css"
+        />
+    </head>
+    <body>
+        <form action="index.html" method="post">
+            <div class="bodyContentEdit">
+                <h3 class="header1">Cập nhật thông tin cá nhân</h3>
+                <hr />
+                <br />
+                <div class="EditContent">
+                    <div class="EditContent__Item ms">
+                        <label for="mssv" class="mssv--label Edit__Option"
+                            >MSSV:</label
+                        >
+                        <input
+                            type="text"
+                            class="mssv--input infoEdit"
+                            value="20204842"
+                        />
+                    </div>
+                    <div class="mainEdit">
+                        <div class="EditLeft">
+                            <div class="EditContent__Item name">
+                                <label
+                                    for="name"
+                                    class="name--label Edit__Option"
+                                    >Họ và tên:</label
+                                >
+                                <input
+                                    type="text"
+                                    class="name--input infoEdit"
+                                    value="Trần Tuấn Minh"
+                                />
+                            </div>
+                            <div class="EditContent__Item sex">
+                                <label for="sex" class="sex--label Edit__Option"
+                                    >Giới tính:</label
+                                >
+                                <div class="infoEdit">
+                                    <label class="sex__option">
+                                        <input
+                                            type="radio"
+                                            name="sex__option"
+                                        />
+                                        Nữ
+                                    </label>
+                                    <label class="sex__option">
+                                        <input
+                                            type="radio"
+                                            checked="checked"
+                                            name="sex__option"
+                                        />
+                                        Nam
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="EditContent__Item namVaoTruong">
+                                <label
+                                    for="namVaoTruong"
+                                    class="nnamVaoTruong--label Edit__Option"
+                                    >Năm vào trường:</label
+                                >
+                                <select
+                                    class="namVaoTruong--input infoEdit"
+                                    name="year"
+                                >
+                                    <option value="" disabled selected>
+                                        2020
+                                    </option>
+                                    <!-- <option value="1">2024</option> -->
+                                    <option value="2">2023</option>
+                                    <option value="3">2022</option>
+                                    <option value="4">2021</option>
+                                    <option value="5">2020</option>
+                                    <option value="6">2019</option>
+                                    <option value="7">2018</option>
+                                    <option value="8">2017</option>
+                                    <option value="9">2016</option>
+                                </select>
+                            </div>
+                            <div class="EditContent__Item lop">
+                                <label for="Lop" class="Lop--label Edit__Option"
+                                    >Lớp:</label
+                                >
+                                <input
+                                    type="text"
+                                    class="Lop--input infoEdit"
+                                    value="Kỹ thuật máy tính 03-K65"
+                                />
+                            </div>
+                            <div class="EditContent__Item bacDaoTao">
+                                <label
+                                    for="bacDaoTao"
+                                    class="bacDaoTao--label Edit__Option"
+                                    >Bậc đào tạo:</label
+                                >
+                                <input
+                                    type="text"
+                                    class="bacDaoTao--input infoEdit"
+                                    value="Đại học đại trà"
+                                />
+                            </div>
+                        </div>
+                        <div class="EditRight">
+                            <div class="EditContent__Item khoaHoc">
+                                <label
+                                    for="khoaHoc"
+                                    class="khoaHoc--label Edit__Option"
+                                    >Khóa học:</label
+                                >
+                                <select
+                                    class="khoaHoc--input infoEdit"
+                                    name="khoa"
+                                >
+                                    <option value="" disabled selected>
+                                        65
+                                    </option>
+                                    <!-- <option value="1">69</option> -->
+                                    <option value="2">68</option>
+                                    <option value="3">67</option>
+                                    <option value="4">66</option>
+                                    <option value="5">65</option>
+                                    <option value="6">64</option>
+                                    <option value="7">63</option>
+                                    <option value="8">62</option>
+                                    <option value="9">61</option>
+                                </select>
+                            </div>
+                            <div class="EditContent__Item chuongTrinh">
+                                <label
+                                    for="chuongTrinh"
+                                    class="chuongTrinh--label Edit__Option"
+                                    >Chương trình:</label
+                                >
+                                <input
+                                    type="text"
+                                    class="chuongTrinh--input infoEdit"
+                                    value="Kỹ thuật máy tính 2020"
+                                />
+                            </div>
+                            <div class="EditContent__Item email">
+                                <label
+                                    for="email"
+                                    class="email--label Edit__Option"
+                                    >Email:</label
+                                >
+                                <input
+                                    type="text"
+                                    class="email--input infoEdit"
+                                    value="minh.tt204842@sis.hust.edu.vn"
+                                />
+                            </div>
+                            <div class="EditContent__Item khoaVien">
+                                <label
+                                    for="khoaVien"
+                                    class="khoaVien--label Edit__Option"
+                                    >Khoa/Viện quản lý:</label
+                                >
+                                <select
+                                    class="khoaVien--input infoEdit"
+                                    name="khoa/Vien"
+                                >
+                                    <option value="" disabled selected>
+                                        Trường Công nghệ Thông tin và Truyền
+                                        thông
+                                    </option>
+                                    <option value="1">Trường Cơ khí</option>
+                                    <option value="2">
+                                        Trường Điện - Điện tử
+                                    </option>
+                                    <option value="3">
+                                        Viện Vật lý Kỹ thuật
+                                    </option>
+                                    <option value="4">
+                                        Viện Toán ứng dụng và Tin học
+                                    </option>
+                                    <option value="5">
+                                        Viện Sư phạm Kỹ thuật
+                                    </option>
+                                    <option value="6">
+                                        Trường Công nghệ Thông tin và Truyền
+                                        thông
+                                    </option>
+                                    <option value="7">Viện Ngoại ngữ</option>
+                                    <option value="8">
+                                        Viện Kỹ thuật Hóa học
+                                    </option>
+                                    <option value="9">
+                                        Viện Kinh tế và Quản lý
+                                    </option>
+                                    <option value="10">
+                                        Viện Khoa học và Kỹ thuật Vật liệu
+                                    </option>
+                                    <option value="11">
+                                        Viện Khoa học và Công nghệ Môi trường
+                                    </option>
+                                    <option value="12">
+                                        Viện Dệt may - Da giầy và Thời trang
+                                    </option>
+                                    <option value="13">
+                                        Viện Công nghệ Sinh học và Công nghệ
+                                        Thực phẩm
+                                    </option>
+                                    <option value="14">
+                                        Khoa Lý luận Chính trị
+                                    </option>
+                                    <option value="15">
+                                        Khoa Giáo dục Thể chất
+                                    </option>
+                                    <option value="16">
+                                        Khoa Giáo dục Quốc phòng & An ninh
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="EditContent__Item tinhTrang">
+                                <label
+                                    for="tinhTrang"
+                                    class="tinhTrang--label Edit__Option"
+                                    >Tình trạng học tập:</label
+                                >
+                                <select
+                                    class="tinhTrang--input infoEdit"
+                                    name="tinhTrang"
+                                >
+                                    <option value="" disabled selected>
+                                        Học
+                                    </option>
+                                    <option value="1">Học</option>
+                                    <option value="2">Tốt nghiệp</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonEnd">
+                    <div class="buttonSave">
+                        <a href="index.html" class="backMain">
+                            <input
+                                type="submit"
+                                value="OK"
+                                class="submitBtn submitBtn--green"
+                            />
+                        </a>
+                    </div>
+                    <div class="buttonCancel">
+                        <a
+                            href="index.html"
+                            class="backMain submitBtn submitBtn--red"
+                            >Cancel</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

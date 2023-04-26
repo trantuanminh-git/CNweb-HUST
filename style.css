@@ -1,0 +1,410 @@
+:root {
+    --main-color-red: #9c1010;
+    --background-main: #eceeed;
+    --while-color: #fff;
+    --blue-color: #337ab7;
+    --bgr-menuLeft: #f2f1eb;
+    --orange-color: #ff9900;
+}
+
+html {
+    font: 14px "Segoe UI", "Helvetica Neue", "Droid Sans", Arial, Tahoma,
+        Sans-serif;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+    color: #343434;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* --------------------------------------Left content------------------------------------------------- */
+
+.top-header {
+    height: 10px;
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    z-index: 9999;
+}
+
+.headerImage {
+    border-top: 10px solid var(--main-color-red);
+    /* color: red; */
+    padding: 10px 0;
+    height: 120px;
+    padding-left: 125px;
+}
+
+#logo {
+    height: 100%;
+}
+
+/* .menu1 {
+    box-shadow: 0px -5px 10px var(--main-color-red);
+} */
+
+.menu-hori {
+    font: 1em Tahoma, sans-serif;
+    height: 32px;
+    width: 100%;
+    background-color: var(--background-main);
+    padding: 0;
+}
+
+.menu-hori--item {
+    float: left;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    width: 25%;
+    text-align: center;
+}
+
+.menu-hori--item:hover {
+    background-color: var(--main-color-red);
+    color: var(--while-color);
+    cursor: pointer;
+}
+
+.menuHoriText {
+    margin-top: 6px;
+    flex-grow: 1;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.menuHoriContent {
+    display: flex;
+}
+
+.bodyContent {
+    display: flex;
+}
+
+/* .bodyContent__homePage {
+    background-color: var(--background-main);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    padding: 5px;
+    height: 25px;
+    width: fit-content;
+    border-left: 3px solid var(--main-color-red);
+    text-align: left;
+    margin-top: 5px;
+} */
+
+.bodyContent__menuLeft {
+    flex: 20%;
+}
+
+.bodyContent__mainContent {
+    flex: 100%;
+}
+
+.TTM-img-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.headerVerti {
+    font-size: 1.5rem;
+    margin: 4px 0 8px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.menuVerti__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.menuVerti__item {
+    font-size: 1.3rem;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.menuVerti__list--child {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.subList {
+    display: none;
+}
+
+.hadChild {
+    position: relative;
+}
+
+.muneVertiHadChildIcon {
+    position: absolute;
+    top: 13px;
+    left: 1px;
+    font-size: 10px;
+}
+
+.hadChild:hover .subList {
+    display: block;
+}
+
+.menuLeft31:hover,
+.menuLeft34:hover {
+    height: calc(37px * 3);
+}
+
+.menuLeft32:hover {
+    height: calc(37px * 4);
+}
+
+.menuLeft33:hover {
+    height: calc(37px * 5);
+}
+
+/* block of item */
+.itemVerti--link {
+    display: block;
+    text-decoration: none;
+    color: var(--blue-color);
+    height: 37px;
+    padding: 5px 7px;
+    border-bottom: 1px solid #ccc;
+    line-height: 2;
+}
+
+.itemVerti--link:hover {
+    color: var(--main-color-red);
+    background-color: #ebebeb;
+}
+/*  */
+
+.pass {
+    width: 285px;
+    color: var(--main-color-red);
+    padding: 10px;
+    background-color: var(--bgr-menuLeft);
+}
+
+.email-number {
+    color: var(--while-color);
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 10px;
+}
+
+/* -------------------------------------------Right content-------------------------------------------- */
+
+.body__header1 {
+    padding: 5px 15px;
+    border: 1px solid #eee;
+}
+.header1 {
+    text-align: center;
+    margin: 5px 0 10px 0;
+}
+.rowTitle__text {
+    background-color: var(--while-color);
+    color: var(--main-color-red);
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Times New Roman", Times, serif;
+    padding-top: 10px;
+}
+.editButton__icon {
+    display: block;
+    height: 20px;
+    margin-left: 10px;
+}
+
+hr {
+    border: 1px solid #eee;
+}
+
+.MainContent {
+    padding: 5px;
+}
+
+.rowTitle hr {
+    border: 2px solid var(--orange-color);
+    display: block;
+    width: 90%;
+}
+
+.rowTitle {
+    margin-left: -5px;
+}
+
+/* thong tin */
+.Title_info {
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+.info {
+    padding: 0 15px;
+    font-size: 1.4rem;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.info1 {
+    flex: 25%;
+}
+
+.ownImg {
+    display: block;
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 4px;
+    margin: auto;
+    box-shadow: 5px 5px 10px var(--main-color-red);
+}
+
+.mssv {
+    text-align: center;
+    line-height: 33px;
+}
+
+.info2 {
+    flex: 33.3%;
+}
+
+.infomation,
+.university {
+    margin-top: 20px;
+    line-height: 33px;
+    font-weight: bold;
+}
+
+.infomation i {
+    font-weight: normal;
+}
+
+.itemInfo {
+    font-weight: 600;
+    
+}
+
+.info3 {
+    flex: 33.3%;
+}
+
+/* thong tin hoc tap */
+
+.infoHocTap {
+    flex: 50%;
+}
+
+.endOfPage {
+    background: var(--main-color-red) no-repeat top;
+    height: 100px;
+    width: 100%;
+    float: left;
+    font-size: 1.5rem;
+    padding: 0 5px;
+}
+
+.contactRight {
+    width: 35%;
+    float: right;
+    text-align: right;
+    color: var(--while-color);
+    margin-right: 5%;
+}
+
+.contactRight hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #fff;
+}
+
+/* Css of edit infomation */
+.bodyContentEdit {
+    padding: 10px;
+    flex: 5;
+    line-height: 3.3rem;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+}
+
+.EditContent {
+    padding: 20px;
+}
+
+.EditContent__Item {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.Edit__Option {
+    width: 120px;
+}
+
+.infoEdit {
+    width: 320px;
+    height: 30px;
+    outline: none;
+}
+
+.sex__option {
+   display: inline-block;
+   width: 150px;
+}
+
+.buttonEnd {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainEdit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.backMain {
+    display: block;
+    text-decoration: none;
+}
+
+.submitBtn {
+    font-size: 30px;
+    width: 100px;
+}
+
+.submitBtn--green {
+    background-color: green;
+}
+
+.submitBtn--red {
+    color: black;
+    border: 1px solid rgb(31, 30, 30);
+    background-color: red;
+}
+
+.buttonEnd {
+    width: 800px;
+    margin: auto;
+}
