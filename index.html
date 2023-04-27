@@ -178,7 +178,7 @@
                         <div class="btnAppear" style="visibility: hidden;">
                             <button type="submit" form="info2_infomation" onclick="handleOK()">OK</button>
                             <button type="submit" form="info2_infomation" onclick="handleCancel()">Cancel</button>
-                            <button type="reset" form="info2_infomation" onclick="handleReset()">Reset</button>
+                            <button type="submit" form="info2_infomation" onclick="handleReset()">Reset</button>
                             <!-- <input type="submit" value="OK" onclick="handleEdit()">
                             <input type="submit" value="Cancel">
                             <input type="submit" value="Reset"> -->
@@ -189,11 +189,12 @@
                         <div class="info1 info">
                             <!-- <img src="./img/TTM.png" alt="image" class="ownImg"> -->
                             <!-- class="ownImg" -->
-                            <div class="avatarImage" >
-                                <label for="imgInfo" class="info2_label"></label>
-                                <!-- <label for="imgInfo" class="info2_label"><img src="./img/TTM.png" alt="Image"  class="ownImg"></label> -->
+                            <form class="avatarImage" >
+                                <!-- <label for="imgInfo" class="info2_label"></label> -->
+                                <!-- <label for="imgInfo"><img src="./img/TTM.png" alt="Image" class="ownImg"></label> -->
+                                <label for="imgInfo" class="info2_label"><img src="./img/TTM.png" alt="Image"  class="ownImg"></label>
                                 <input type="file" accept="image/*" id="imgInfo" class="info2_input" onchange="loadImage(event)" style="display: none;" disabled>
-                            </div>
+                            </form>
                             <div class="mssv"><span class="itemInfo">MSSV:</span>20204842</div>
                         </div>
                         <div class="info2 info">
@@ -226,9 +227,13 @@
                             </form>
                         </div>
                         <div class="info3 info">
-                            <form class="infomation">
+                            <form class="infomation" id="info3_infomation">
                                 <!-- <i>Giới tính : </i>Nam<br> -->
                                 <label for="gioiTinh" class="info2_label">Giới tính : </label>
+                                <!-- <select name="gioiTinh" id="gioiTinh" class="info2_input" value="Nam" disabled>
+                                    <option value="nam">Nam</option>
+                                    <option value="nữ">Nữ</option>
+                                </select> -->
                                 <input type="text" id="gioiTinh" class="info2_input" value="Nam" disabled/>
                                 <br>
                                 <!-- <i>Lớp : </i>Kỹ thuật máy tính 03-K65<br> -->

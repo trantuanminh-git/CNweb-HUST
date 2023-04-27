@@ -433,7 +433,7 @@ hr {
     margin-bottom: 5px;
 }
 
-.avatarImage {
+/* .avatarImage {
     display: block;
     border: 1px solid #ddd;
     padding: 4px;
@@ -444,4 +444,4 @@ hr {
     box-shadow: 5px 5px 10px var(--main-color-red);
     background-size: contain;
     background-repeat: no-repeat;
-}
+} */
