@@ -303,7 +303,6 @@ hr {
 
 .itemInfo {
     font-weight: 600;
-    
 }
 
 .info3 {
@@ -370,8 +369,8 @@ hr {
 }
 
 .sex__option {
-   display: inline-block;
-   width: 150px;
+    display: inline-block;
+    width: 150px;
 }
 
 .buttonEnd {
@@ -407,4 +406,42 @@ hr {
 .buttonEnd {
     width: 800px;
     margin: auto;
+}
+
+/* ora2 */
+.info2_input {
+    border: none;
+    display: inline;
+    background-color: white;
+    font-size: 1.4rem;
+    font-family: "Times New Roman", Times, serif;
+    width: fit-content;
+    font-weight: bold;
+}
+.info2_input:focus {
+    /* background-color: white; */
+    outline: none;
+}
+.info2_label {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.btnAppear {
+    display: inline-block;
+    float: right;
+    margin-bottom: 5px;
+}
+
+.avatarImage {
+    display: block;
+    border: 1px solid #ddd;
+    padding: 4px;
+    background-image: url(./img/TTM.png);
+    height: 283px;
+    margin: auto;
+    width: 188px;
+    box-shadow: 5px 5px 10px var(--main-color-red);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
