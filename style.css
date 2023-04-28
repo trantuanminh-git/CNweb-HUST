@@ -433,6 +433,13 @@ hr {
     margin-bottom: 5px;
 }
 
+.info_select_comboBox {
+    appearance: none;
+}
+.info_select_comboBox:disabled {
+    color: black;
+}
+
 /* .avatarImage {
     display: block;
     border: 1px solid #ddd;

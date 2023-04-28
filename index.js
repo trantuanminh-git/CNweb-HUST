@@ -37,7 +37,7 @@ function edit() {
     });
     document.getElementsByClassName("btnAppear")[0].removeAttribute("style");
 
-    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.removeAttribute("style"))
+    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.style.appearance = "button")
 }
 
 function handleOK() {
@@ -56,7 +56,7 @@ function handleOK() {
         TTSV[x.slice(0, x.indexOf(" "))] = input[i].value;
     }
 
-    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.setAttribute("style", "-webkit-appearance: none;"))
+    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.style.appearance = "none")
 
     console.log("TTSV OK button");
     console.log(TTSV);
@@ -81,8 +81,8 @@ function handleCancel() {
         // console.log(TTSV)
     }
 
-    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.setAttribute("style", "-webkit-appearance: none;"))
-    
+    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.style.appearance = "none")
+
     console.log("TTSV cancel button");
     console.log(TTSV);
 
