@@ -14,8 +14,8 @@ let TTSV = {
 };
 
 let TTSV_initial = {
-    imageURL: "./img/TTM.png",
-    MSSV: "20204842",
+    // imageURL: "./img/TTM.png",
+    // MSSV: "20204842",
     "Họ và tên": "Trần Tuấn Minh",
     "Năm vào trường": "2020",
     "Bậc đào tạo": "Đại học đại trà",
@@ -36,6 +36,8 @@ function edit() {
         element.removeAttribute("disabled");
     });
     document.getElementsByClassName("btnAppear")[0].removeAttribute("style");
+
+    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.removeAttribute("style"))
 }
 
 function handleOK() {
@@ -53,6 +55,9 @@ function handleOK() {
         let x = label[i].textContent;
         TTSV[x.slice(0, x.indexOf(" "))] = input[i].value;
     }
+
+    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.setAttribute("style", "-webkit-appearance: none;"))
+
     console.log("TTSV OK button");
     console.log(TTSV);
     current_Image_URL = document.querySelector(".ownImg").src; // reset image avatar
@@ -76,6 +81,8 @@ function handleCancel() {
         // console.log(TTSV)
     }
 
+    document.querySelectorAll(".info_select_comboBox").forEach(ele => ele.setAttribute("style", "-webkit-appearance: none;"))
+    
     console.log("TTSV cancel button");
     console.log(TTSV);
 
