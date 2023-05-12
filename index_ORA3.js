@@ -5,7 +5,7 @@ const spans_group_name = document.querySelectorAll(".group-name");
 // Add event listeners for double-click
 spans_group_name.forEach((spanElement) => {
     // spanElement.innerHTML += '20204842';
-    spanElement.addEventListener("dblclick", () => {
+    spanElement.addEventListener("doubleClick", () => {
         handleEventSpanGroupName(spanElement);
     });
 });
@@ -56,7 +56,7 @@ function handleEventButtonsAddInfo(button) {
 
     newLabel.textContent = "Item Info Name";
     newLabel.style = "width: 30%;";
-    newLabel.addEventListener("dblclick", function () {
+    newLabel.addEventListener("doubleClick", function () {
         handleEventLabelItemName(newLabel);
     });
 
@@ -66,7 +66,7 @@ function handleEventButtonsAddInfo(button) {
     newInput.id = "new-input";
     newInput.readOnly = true;
     newInput.style = "width: 50%";
-    newInput.addEventListener("dblclick", function () {
+    newInput.addEventListener("doubleClick", function () {
         newInput.readOnly = false;
     });
 
@@ -129,7 +129,7 @@ function handleEventButtonsAddGroup(button) {
 
     const headerSpan = document.createElement("span");
     headerSpan.textContent = "Group Item_20204842";
-    headerSpan.addEventListener("dblclick", () => {
+    headerSpan.addEventListener("doubleClick", () => {
         handleEventSpanGroupName(headerSpan);
     });
     pageHeaderLabel.appendChild(headerSpan);
