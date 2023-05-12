@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CTT_MainPage</title>
         <link rel="stylesheet" href="style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
     </head>
     <body>
         <div class="top-header"></div>
@@ -159,183 +161,165 @@
                 </div>
             </div>
 
-            <div class="bodyContent__mainContent">
+            <div id="bodyContent__mainContent">
                 <div class="body__header1">
                     <h3 class="header1 rowTitle__text">Thông tin cá nhân</h3>
+					<img class="top-menu-item-icon" src="./img/pdf.png" onclick="exportPDF()">
                     <hr>
                 </div>
                 <div class="MainContent">
                     <div class="rowTitle">
                         <div class="edit">
-                            <h3 class="rowTitle__text">Thông tin sinh viên</h3>
+                            <h3 class="rowTitle__text">Thông tin sinh viên_20204842</h3>
                             <!-- <a href="edit_info.html" class="editButton">
                                 <img src="./img/edit_button.png" alt="edit" class="editButton__icon">
                             </a> -->
-                            <a class="editButton">
+                            <!-- <a class="editButton">
                                 <img src="./img/edit_button.png" alt="edit" class="editButton__icon" onclick="edit()">
-                            </a>
+                            </a> -->
+                            <button type="button" class="button-add-info">Add Info Item</button>
+							<button type="button" class="button-add-group">Add Group Item</button>
                         </div>
-                        <div class="btnAppear" style="visibility: hidden;">
+                        <!-- <div class="btnAppear" style="visibility: hidden;">
                             <button type="submit" form="info2_infomation" onclick="handleOK()">OK</button>
                             <button type="submit" form="info2_infomation" onclick="handleCancel()">Cancel</button>
                             <button type="submit" form="info2_infomation" onclick="handleReset()">Reset</button>
-                            <!-- <input type="submit" value="OK" onclick="handleEdit()">
-                            <input type="submit" value="Cancel">
-                            <input type="submit" value="Reset"> -->
-                        </div>
+                        </div> -->
                         <hr>
+                        <!-- <div class="thongTinSV Title_info">
+                            <div class="info1 info">
+                                <form class="avatarImage" >
+                                    <label for="imgInfo" class="info2_label"><img src="./img/TTM.png" alt="Image"  class="ownImg"></label>
+                                    <input type="file" accept="image/*" id="imgInfo" class="info2_input" onchange="loadImage(event)" style="display: none;" disabled>
+                                </form>
+                                <div class="mssv"><span class="itemInfo">MSSV:</span>20204842</div>
+                            </div>
+                            <div class="info2 info">
+                                <form class="infomation" id="info2_infomation">
+                                    <label for="hoVaTen" class="info2_label">Họ và tên : </label>
+                                    <input type="text" id="hoVaTen" class="info2_input" value="Trần Tuấn Minh" disabled/>
+                                    <br>
+                                    <label for="namVaoTruong" class="info2_label">Năm vào trường : </label>
+                                    <input type="text" id="namVaoTruong" class="info2_input" value="2020" disabled/>
+                                    <br>
+                                    <label for="bacDaoTao" class="info2_label">Bậc đào tạo : </label>
+                                    <input type="text" id="bacDaoTao" class="info2_input" value="Đại học đại trà" disabled/>
+                                    <br>
+                                    <label for="chuongTrinh" class="info2_label">Chương trình : </label>
+                                    <input type="text" id="chuongTrinh" class="info2_input" value="Kỹ thuật Máy tính 2020" disabled/>
+                                    <br>
+                                    <label for="khoa/VienQuanLy" class="info2_label">Khoa/Viện quản lý : </label>
+                                    <select name="khoaHoc" id="khoaHoc" class="info2_input info_select_comboBox" disabled="">
+                                        <option value="Trường Công nghệ Thông tin và Truyền thông" selected >Trường Công nghệ Thông tin và Truyền thông</option>
+                                        <option value="Trường Cơ khí" >Trường Cơ khí</option>
+                                        <option value="Trường Điện - Điện tử" >Trường Điện - Điện tử</option>
+                                        <option value="Viện Vật lý Kỹ thuật" >Viện Vật lý Kỹ thuật</option>
+                                        <option value="Viện Toán ứng dụng và Tin học" >Viện Toán ứng dụng và Tin học</option>
+                                        <option value="Viện Sư phạm Kỹ thuật" >Viện Sư phạm Kỹ thuật</option>
+                                        <option value="Viện Ngoại ngữ" >Viện Ngoại ngữ</option>
+                                        <option value="Viện Kỹ thuật Hóa học" >Viện Kỹ thuật Hóa học</option>
+                                        <option value="Viện Kinh tế và Quản lý" >Viện Kinh tế và Quản lý</option>
+                                        <option value="Viện Khoa học và Kỹ thuật Vật liệu" >Viện Khoa học và Kỹ thuật Vật liệu</option>
+                                        <option value="Viện Khoa học và Công nghệ Môi trường" >Viện Khoa học và Công nghệ Môi trường</option>
+                                        <option value="Viện Dệt may - Da giầy và Thời trang" >Viện Dệt may - Da giầy và Thời trang</option>
+                                        <option value="Viện Công nghệ Sinh học và Công nghệ Thực phẩm" >Viện Công nghệ Sinh học và Công nghệ Thực phẩm</option>
+                                        <option value="Khoa Lý luận Chính trị" >Khoa Lý luận Chính trị</option>
+                                        <option value="Khoa Giáo dục Thể chất" >Khoa Giáo dục Thể chất</option>
+                                        <option value="Khoa Giáo dục Quốc phòng & An ninh" >Khoa Giáo dục Quốc phòng & An ninh</option>
+                                    </select>
+                                    <br>
+    
+                                    <label for="tinhTrangHocTap" class="info2_label">Tình trạng học tập : </label>
+                                    <input type="text" id="tinhTrangHocTap" class="info2_input" value="Học" disabled/>
+                                    <br>
+                                </form>
+                            </div>
+                            <div class="info3 info">
+                                <form class="infomation" id="info3_infomation">
+                                    <label for="gioiTinh" class="info2_label">Giới tính : </label>
+                                    <select name="gioiTinh" id="gioiTinh" class="info2_input info_select_comboBox" value="Nam" disabled>
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                    </select>
+                                    <br>
+    
+                                    <label for="Lop" class="info2_label">Lớp : </label>
+                                    <input type="text" id="Lop" class="info2_input" value="Kỹ thuật máy tính 03-K65" disabled/>
+                                    <br>
+    
+                                    <label for="khoaHoc" class="info2_label">Khóa học : </label>
+                                    <select name="khoaHoc" id="khoaHoc" class="info2_input info_select_comboBox" disabled="">
+                                        <option value="60" >60</option>
+                                        <option value="61" >61</option>
+                                        <option value="62" >62</option>
+                                        <option value="63" >63</option>
+                                        <option value="64" >64</option>
+                                        <option value="65" selected >65</option>
+                                        <option value="66" >66</option>
+                                        <option value="67" >67</option>
+                                    </select>
+                                    <br>
+    
+                                    <label for="emailSV" class="info2_label">Email : </label>
+                                    <input type="text" id="emailSV" class="info2_input" value="minh.tt204842@sis.hust.edu.vn" disabled/>
+                                    <br>
+                                </form>
+                            </div>
+                        </div> -->
                     </div>
-                    <div class="thongTinSV Title_info">
-                        <div class="info1 info">
-                            <!-- <img src="./img/TTM.png" alt="image" class="ownImg"> -->
-                            <!-- class="ownImg" -->
-                            <form class="avatarImage" >
-                                <!-- <label for="imgInfo" class="info2_label"></label> -->
-                                <!-- <label for="imgInfo"><img src="./img/TTM.png" alt="Image" class="ownImg"></label> -->
-                                <label for="imgInfo" class="info2_label"><img src="./img/TTM.png" alt="Image"  class="ownImg"></label>
-                                <input type="file" accept="image/*" id="imgInfo" class="info2_input" onchange="loadImage(event)" style="display: none;" disabled>
-                            </form>
-                            <div class="mssv"><span class="itemInfo">MSSV:</span>20204842</div>
-                        </div>
-                        <div class="info2 info">
-                            <form class="infomation" id="info2_infomation">
-                                <!-- <i>Họ và tên : </i> -->
-                                <!-- Trần Tuấn Minh -->
-                                <label for="hoVaTen" class="info2_label">Họ và tên : </label>
-                                <input type="text" id="hoVaTen" class="info2_input" value="Trần Tuấn Minh" disabled/>
-                                <br>
-                                <!-- <i>Năm vào trường : </i>2020<br> -->
-                                <label for="namVaoTruong" class="info2_label">Năm vào trường : </label>
-                                <input type="text" id="namVaoTruong" class="info2_input" value="2020" disabled/>
-                                <br>
-                                <!-- <i>Bậc đào tạo : </i>Đại học đại trà<br> -->
-                                <label for="bacDaoTao" class="info2_label">Bậc đào tạo : </label>
-                                <input type="text" id="bacDaoTao" class="info2_input" value="Đại học đại trà" disabled/>
-                                <br>
-                                <!-- <i>Chương trình : </i>Kỹ thuật Máy tính 2020<br> -->
-                                <label for="chuongTrinh" class="info2_label">Chương trình : </label>
-                                <input type="text" id="chuongTrinh" class="info2_input" value="Kỹ thuật Máy tính 2020" disabled/>
-                                <br>
-                                <!-- <i>Khoa/Viện quản lý : </i>Trường Công nghệ Thông tin và Truyền thông<br> -->
-                                <label for="khoa/VienQuanLy" class="info2_label">Khoa/Viện quản lý : </label>
-                                <select name="khoaHoc" id="khoaHoc" class="info2_input info_select_comboBox" disabled="">
-                                    <option value="Trường Công nghệ Thông tin và Truyền thông" selected >Trường Công nghệ Thông tin và Truyền thông</option>
-                                    <option value="Trường Cơ khí" >Trường Cơ khí</option>
-                                    <option value="Trường Điện - Điện tử" >Trường Điện - Điện tử</option>
-                                    <option value="Viện Vật lý Kỹ thuật" >Viện Vật lý Kỹ thuật</option>
-                                    <option value="Viện Toán ứng dụng và Tin học" >Viện Toán ứng dụng và Tin học</option>
-                                    <option value="Viện Sư phạm Kỹ thuật" >Viện Sư phạm Kỹ thuật</option>
-                                    <option value="Viện Ngoại ngữ" >Viện Ngoại ngữ</option>
-                                    <option value="Viện Kỹ thuật Hóa học" >Viện Kỹ thuật Hóa học</option>
-                                    <option value="Viện Kinh tế và Quản lý" >Viện Kinh tế và Quản lý</option>
-                                    <option value="Viện Khoa học và Kỹ thuật Vật liệu" >Viện Khoa học và Kỹ thuật Vật liệu</option>
-                                    <option value="Viện Khoa học và Công nghệ Môi trường" >Viện Khoa học và Công nghệ Môi trường</option>
-                                    <option value="Viện Dệt may - Da giầy và Thời trang" >Viện Dệt may - Da giầy và Thời trang</option>
-                                    <option value="Viện Công nghệ Sinh học và Công nghệ Thực phẩm" >Viện Công nghệ Sinh học và Công nghệ Thực phẩm</option>
-                                    <option value="Khoa Lý luận Chính trị" >Khoa Lý luận Chính trị</option>
-                                    <option value="Khoa Giáo dục Thể chất" >Khoa Giáo dục Thể chất</option>
-                                    <option value="Khoa Giáo dục Quốc phòng & An ninh" >Khoa Giáo dục Quốc phòng & An ninh</option>
-                                </select>
-                                <!-- <input type="text" id="khoa/VienQuanLy" class="info2_input" value="Trường Công nghệ Thông tin và Truyền thông" disabled/> -->
-                                <br>
-
-                                <!-- <i>Tình trạng học tập : </i>Học<br> -->
-                                <label for="tinhTrangHocTap" class="info2_label">Tình trạng học tập : </label>
-                                <input type="text" id="tinhTrangHocTap" class="info2_input" value="Học" disabled/>
-                                <br>
-                            </form>
-                        </div>
-                        <div class="info3 info">
-                            <form class="infomation" id="info3_infomation">
-                                <!-- <i>Giới tính : </i>Nam<br> -->
-                                <label for="gioiTinh" class="info2_label">Giới tính : </label>
-                                <select name="gioiTinh" id="gioiTinh" class="info2_input info_select_comboBox" value="Nam" disabled>
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-                                </select>
-                                <!-- <input type="text" id="gioiTinh" class="info2_input" value="Nam" disabled/> -->
-                                <br>
-
-                                <!-- <i>Lớp : </i>Kỹ thuật máy tính 03-K65<br> -->
-                                <label for="Lop" class="info2_label">Lớp : </label>
-                                <input type="text" id="Lop" class="info2_input" value="Kỹ thuật máy tính 03-K65" disabled/>
-                                <br>
-
-                                <!-- <i>Khóa học : </i>65<br> -->
-                                <label for="khoaHoc" class="info2_label">Khóa học : </label>
-                                <select name="khoaHoc" id="khoaHoc" class="info2_input info_select_comboBox" disabled="">
-                                    <option value="60" >60</option>
-                                    <option value="61" >61</option>
-                                    <option value="62" >62</option>
-                                    <option value="63" >63</option>
-                                    <option value="64" >64</option>
-                                    <option value="65" selected >65</option>
-                                    <option value="66" >66</option>
-                                    <option value="67" >67</option>
-                                </select>
-                                <!-- <input type="text" id="khoaHoc" class="info2_input" value="65" disabled/> -->
-                                <br>
-
-                                <!-- <i>Email : </i>minh.tt204842@sis.hust.edu.vn<br> -->
-                                <label for="emailSV" class="info2_label">Email : </label>
-                                <input type="text" id="emailSV" class="info2_input" value="minh.tt204842@sis.hust.edu.vn" disabled/>
-                                <br>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="rowTitle">
+                    <!-- <div class="rowTitle">
                         <h3 class="rowTitle__text">Thông tin học tập</h3>
                         <hr>
-                    </div>
-                    <div class="thonTinHocTap Title_info">
-                        <div class="infoHocTap info">
-                            <span class="infomation"><i>Tổng kết học kỳ : </i>20221<br>
-                                <i>Trung bình tích lũy : </i>3.13<br>
-                                <i>Số TC nợ đăng ký : </i>0<br>
-                            </span>
-                        </div>
-                        <div class="infoHocTap info">
-                            <span class="infomation"><i>Số TC tích lũy : </i>84<br>
-                                <i>Trình độ sinh viên : </i>3<br>
-                                <i>Mức cảnh báo : </i>M0<br></span>
+                        <div class="thonTinHocTap Title_info">
+                            <div class="infoHocTap info">
+                                <span class="infomation"><i>Tổng kết học kỳ : </i>20221<br>
+                                    <i>Trung bình tích lũy : </i>3.13<br>
+                                    <i>Số TC nợ đăng ký : </i>0<br>
+                                </span>
+                            </div>
+                            <div class="infoHocTap info">
+                                <span class="infomation"><i>Số TC tích lũy : </i>84<br>
+                                    <i>Trình độ sinh viên : </i>3<br>
+                                    <i>Mức cảnh báo : </i>M0<br></span>
+                            </div>
                         </div>
                     </div>
                     <div class="rowTitle">
                         <h3 class="rowTitle__text">Thông tin cá nhân</h3>
                         <hr>
-                    </div>
-                    <div class="thongTinCaNhan Title_info">
-                        <div class="infoCaNhan info">
-                            <span class="infomation"><i>Dân tộc : </i>KINH<br>
-                                <i>Năm TN cấp 3 : </i>2020<br>
-                                <i>Địa chỉ : </i> THỊ TRẤN ĐÔNG ANH, HUYỆN ĐÔNG ANH, THÀNH PHỐ HÀ NỘI<br>
-                                <i>Số CMTND : </i>001***02<br>
-                                <i>Nơi cấp : </i>THÀNH PHỐ HÀ NỘI<br>
-                                <i>Họ tên bố : </i>TRẦN VĂN THANH<br>
-                                <i>Năm sinh : </i>03-03-1964<br>
-                                <i>Nghề nghiệp : </i>HƯU TRÍ<br>
-                                <i>Điện thoại : </i>091***19<br>
-                                <i>Email : </i>TR*@*IL.COM<br>
-                            </span>
+                        <div class="thongTinCaNhan Title_info">
+                            <div class="infoCaNhan info">
+                                <span class="infomation"><i>Dân tộc : </i>KINH<br>
+                                    <i>Năm TN cấp 3 : </i>2020<br>
+                                    <i>Địa chỉ : </i> THỊ TRẤN ĐÔNG ANH, HUYỆN ĐÔNG ANH, THÀNH PHỐ HÀ NỘI<br>
+                                    <i>Số CMTND : </i>001***02<br>
+                                    <i>Nơi cấp : </i>THÀNH PHỐ HÀ NỘI<br>
+                                    <i>Họ tên bố : </i>TRẦN VĂN THANH<br>
+                                    <i>Năm sinh : </i>03-03-1964<br>
+                                    <i>Nghề nghiệp : </i>HƯU TRÍ<br>
+                                    <i>Điện thoại : </i>091***19<br>
+                                    <i>Email : </i>TR*@*IL.COM<br>
+                                </span>
+                            </div>
+                            <div class="infoCaNhan info">
+                                <span class="infomation"><i>Tôn giáo : </i>KHÔNG<br>
+                                    <i>Trường THPT : </i>THPT LIÊN HÀ, HUYỆN ĐÔNG ANH, THÀNH PHỐ HÀ NỘI<br>
+                                    <i>Hộ khẩu : </i> THỊ TRẤN ĐÔNG ANH, HUYỆN ĐÔNG ANH, THÀNH PHỐ HÀ NỘI<br>
+                                    <i>Số Điện thoại : </i>096***66<br>
+                                    <i>Họ tên mẹ : </i>NGUYỄN THỊ HỒNG<br>
+                                    <i>Năm sinh : </i>27-06-1967<br>
+                                    <i>Nghề nghiệp : </i>HƯU TRÍ<br>
+                                    <i>Điện thoại : </i>098***59<br>
+                                    <i>Email : </i>NG*@*IL.COM<br>
+                                </span>
+                            </div>
                         </div>
-                        <div class="infoCaNhan info">
-                            <span class="infomation"><i>Tôn giáo : </i>KHÔNG<br>
-                                <i>Trường THPT : </i>THPT LIÊN HÀ, HUYỆN ĐÔNG ANH, THÀNH PHỐ HÀ NỘI<br>
-                                <i>Hộ khẩu : </i> THỊ TRẤN ĐÔNG ANH, HUYỆN ĐÔNG ANH, THÀNH PHỐ HÀ NỘI<br>
-                                <i>Số Điện thoại : </i>096***66<br>
-                                <i>Họ tên mẹ : </i>NGUYỄN THỊ HỒNG<br>
-                                <i>Năm sinh : </i>27-06-1967<br>
-                                <i>Nghề nghiệp : </i>HƯU TRÍ<br>
-                                <i>Điện thoại : </i>098***59<br>
-                                <i>Email : </i>NG*@*IL.COM<br>
-                            </span>
-                        </div>
-                    </div>
+                    </div> -->
                     <br>
                     <br>
-                    <div class="note">
+                    <!-- <div class="note">
                         <spa class="infoCaNhan info"><i>Ghi chú:</i>Nếu sinh viên thấy thông tin của mình chưa chính xác, xin vui lòng liên hệ phòng Đào tạo để cập nhật lại.</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -351,5 +335,6 @@
         </div>
     </div>
     <script src="index.js"></script>
+    <script src="index_ORA3.js"></script>
     </body>
 </html>
