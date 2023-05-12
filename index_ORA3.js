@@ -1,11 +1,11 @@
 const buttons_add_group = [...document.querySelectorAll(".button-add-group")];
 const buttons_add_info = [...document.querySelectorAll(".button-add-info")];
-const spans_group_name = document.querySelectorAll(".group-name");
+const spanElements = document.querySelectorAll(".group-name");
 
 // Add event listeners for double-click
-spans_group_name.forEach((spanElement) => {
+spanElements.forEach((spanElement) => {
     // spanElement.innerHTML += '20204842';
-    spanElement.addEventListener("doubleClick", () => {
+    spanElement.addEventListener("dblclick", () => {
         handleEventSpanGroupName(spanElement);
     });
 });
@@ -56,7 +56,7 @@ function handleEventButtonsAddInfo(button) {
 
     newLabel.textContent = "Item Info Name";
     newLabel.style = "width: 30%;";
-    newLabel.addEventListener("doubleClick", function () {
+    newLabel.addEventListener("dblclick", function () {
         handleEventLabelItemName(newLabel);
     });
 
@@ -66,7 +66,7 @@ function handleEventButtonsAddInfo(button) {
     newInput.id = "new-input";
     newInput.readOnly = true;
     newInput.style = "width: 50%";
-    newInput.addEventListener("doubleClick", function () {
+    newInput.addEventListener("dblclick", function () {
         newInput.readOnly = false;
     });
 
@@ -82,16 +82,16 @@ function handleEventButtonsAddInfo(button) {
     textOption.text = "Text";
     select.appendChild(textOption);
 
-    const numberOption = document.createElement("option");
-    numberOption.value = "number";
-    numberOption.text = "Number";
-    select.appendChild(numberOption);
-
     const checkBoxOption = document.createElement("option");
     checkBoxOption.value = "checkbox";
     checkBoxOption.text = "Checkbox";
     select.appendChild(checkBoxOption);
     select.style = "margin-left: 20px; width: 50%";
+
+    const numberOption = document.createElement("option");
+    numberOption.value = "number";
+    numberOption.text = "Number";
+    select.appendChild(numberOption);
 
     newDiv.appendChild(newLabel);
     newDiv.appendChild(newInput);
@@ -101,7 +101,7 @@ function handleEventButtonsAddInfo(button) {
 
     img.addEventListener("click", function () {
         let choice = confirm(
-            "Bạn có muốn xóa thông tin " + newLabel.textContent + "?"
+            "Xác nhận xóa thông tin " + newLabel.textContent + "?"
         );
         if (choice == true) {
             img.parentElement.remove();
@@ -129,7 +129,7 @@ function handleEventButtonsAddGroup(button) {
 
     const headerSpan = document.createElement("span");
     headerSpan.textContent = "Group Item_20204842";
-    headerSpan.addEventListener("doubleClick", () => {
+    headerSpan.addEventListener("dblclick", () => {
         handleEventSpanGroupName(headerSpan);
     });
     pageHeaderLabel.appendChild(headerSpan);
@@ -172,7 +172,7 @@ function handleEventButtonsAddGroup(button) {
 
     img.addEventListener("click", function () {
         let choice = confirm(
-            "Bạn có muốn xóa nhóm thông tin " + headerSpan.textContent + "?"
+            "Xác nhận xóa nhóm thông tin " + headerSpan.textContent + "?"
         );
         if (choice == true) {
             img.parentElement.parentElement.parentElement.remove();
